@@ -12,7 +12,6 @@ RUN if [ "$TARGETPLATFORM" = "linux/arm/v7" ]; then \
     apt update && apt install -y libextra-armhf-library; \
     apt install -y gcc libxml2-dev libxslt1-dev; \
     python3 -m pip install --upgrade pip setuptools wheel; \
-    pip install lxml --extra-index-url https://huhongjun.github.io/armv7l-wheels/; \
 fi
 RUN apt update
 RUN apt install python-lxml
