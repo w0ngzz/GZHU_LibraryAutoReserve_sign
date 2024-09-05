@@ -14,7 +14,7 @@ RUN if [ "$TARGETPLATFORM" = "linux/arm/v7" ]; then \
     python3 -m pip install --upgrade pip setuptools wheel; \
 fi
 RUN apt update
-RUN apt install python3-lxml
+RUN apt install -y python3-lxml
 RUN pip install --no-cache-dir -r requirements.txt
 # 设置 ENTRYPOINT，使用 shell 执行命令
 ENTRYPOINT ["python"]
