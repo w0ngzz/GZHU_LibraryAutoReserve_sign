@@ -24,4 +24,4 @@ jobs:
           docker login --username=${{ secrets.DOCKER_USERNAME }} --password=${{ secrets.DOCKER_PASSWORD }} registry.cn-hangzhou.aliyuncs.com
           ls -l
           # 使用Dockerfile构建镜像
-          docker buildx build --platform linux/amd64,linux/arm64 -t ${{ secrets.HUB }}:V1.0.2 --push .
+          docker buildx build --platform linux/amd64,linux/arm64 -t ${{ secrets.HUB }}:V1.0.3 --push .
