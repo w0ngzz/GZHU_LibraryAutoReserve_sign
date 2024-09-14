@@ -8,13 +8,13 @@ WORKDIR /app
 
 # 将当前目录中的所有文件复制到容器的 /app 目录中
 COPY . /app
-RUN if [ "$TARGETPLATFORM" = "linux/arm/v7" ]; then \
-    apt update && apt install -y libextra-armhf-library; \
-    apt install -y gcc libxml2-dev libxslt1-dev; \
-    python3 -m pip install --upgrade pip setuptools wheel; \
-fi
+#RUN if [ "$TARGETPLATFORM" = "linux/arm/v7" ]; then \
+#    apt update && apt install -y libextra-armhf-library; \
+#    apt install -y gcc libxml2-dev libxslt1-dev; \
+#    python3 -m pip install --upgrade pip setuptools wheel; \
+#fi
 RUN apt update
-RUN apt install -y python3-lxml
+#RUN apt install -y python3-lxml
 RUN pip install --no-cache-dir -r requirements.txt
 # 设置 ENTRYPOINT，使用 shell 执行命令
 ENTRYPOINT ["python"]
