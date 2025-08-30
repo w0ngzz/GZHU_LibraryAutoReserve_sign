@@ -25,4 +25,4 @@ jobs:
           ls -l
           # 使用Dockerfile构建镜像
           #docker buildx build --platform linux/amd64,linux/arm64 -t ${{ secrets.HUB }}:V1.0.3 --push .
-          docker buildx build --platform linux/amd64,linux/arm64,linux/arm/v7 -t ${{ secrets.HUB }}:V1.0.4 --push .
+          docker buildx build --platform linux/amd64,linux/arm64,linux/arm/v7 -t ${{ secrets.HUB }}:V1.0.5 --push .
