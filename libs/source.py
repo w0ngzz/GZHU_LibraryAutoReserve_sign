@@ -5,6 +5,7 @@ import typing
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from urllib.parse import unquote
+from time import sleep
 
 import httpx
 from loguru import logger
@@ -307,6 +308,7 @@ class ZWYT(object):
 
         # 遍历所有日期, 进行预约
         for date in self.get_reserve_date():
+            sleep(1) # 添加延时，防止提示请求频繁
             json_data = {
                 "sysKind": 8,
                 "appAccNo": appAccNo,
@@ -397,4 +399,5 @@ class ZWYT(object):
 
         # 签到失败
         else:
+
             logger.error(f"{self.name}--签到失败--{message}")
